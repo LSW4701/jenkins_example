@@ -1,5 +1,5 @@
 pipeline {
-  agent any //?// { label 'master' } 
+  agent any // { label 'master' } 
  
   parameters {   //젠킨스 파이프라인이 시작할때 넘겨 받는 변수
     booleanParam(name : 'BUILD_DOCKER_IMAGE', defaultValue : true, description : 'BUILD_DOCKER_IMAGE')
@@ -11,7 +11,7 @@ pipeline {
     // CI.
     string(name : 'AWS_ACCOUNT_ID', defaultValue : '959714228357', description : 'AWS_ACCOUNT_ID')
     string(name : 'DOCKER_IMAGE_NAME', defaultValue : 'lsw4701ecr', description : 'DOCKER_IMAGE_NAME')
-    string(name : 'DOCKER_TAG', defaultValue : '1.0.0', description : 'DOCKER_TAG')
+    string(name : 'DOCKER_TAG', defaultValue : '1', description : 'DOCKER_TAG')
 
     // CD.
     //string(name : 'TARGET_SVR_USER', defaultValue : 'ec2-user', description : 'TARGET_SVR_USER')
