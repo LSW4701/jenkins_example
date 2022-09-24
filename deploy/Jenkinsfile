@@ -34,9 +34,9 @@ pipeline {
         }
       ///  agent {label 'build' }
         steps {       
-             echo "Build docker image"//WORKSPACE,일반적으로 젠킨스에서 기본세팅
-               dir("${env.WORKSPACE}") {    // 이 job이 실행되는 host의 위치-> var/jenkins_home/workspaces/demojob
-                sh 'docker build -t test:1 .'
+             echo "Build docker image"//WORKSPACE,일반적으로 젠킨스에서 기본세팅  이 job이 실행되는 host의 위치-> var/jenkins_home/workspaces/demojob
+               dir("${env.WORKSPACE}") {    
+                // sh 'docker build -t test:1 .'
                 sh 'docker build -t ${DOCKER_IMAGE} .'
               }
         }
