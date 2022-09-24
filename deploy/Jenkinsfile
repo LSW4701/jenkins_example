@@ -50,8 +50,8 @@ pipeline {
         when { expression { return params.RUN_TEST } }
        // agent //{ label 'build' }
         steps {
-           
-            // sh 'docker run --rm ${DOCKER_IMAGE} /root/.local/bin/pytest -v'  -> 테스트 그냥 생략
+            echo "run test"
+            // sh 'docker run --rm ${DOCKER_IMAGE} /root/.local/bin/pytest -v'  -> 테스트  생략
             // sh 'docker run --rm ${DOCKER_IMAGE} /root/.local/bin/pytest -v'
             // sh'''
             //     aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${ECR_REPOSITORY}
