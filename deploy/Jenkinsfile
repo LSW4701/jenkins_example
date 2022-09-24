@@ -51,7 +51,8 @@ pipeline {
        // agent //{ label 'build' }
         steps {
            
-            sh('docker run --rm ${DOCKER_IMAGE} /root/.local/bin/pytest -v')
+            // sh 'docker run --rm ${DOCKER_IMAGE} /root/.local/bin/pytest -v'  -> 테스트 그냥 생략
+            // sh 'docker run --rm ${DOCKER_IMAGE} /root/.local/bin/pytest -v'
             // sh'''
             //     aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${ECR_REPOSITORY}
             //     docker run --rm ${ECR_DOCKER_IMAGE}:${ECR_DOCKER_TAG} /root/.local/bin/pytest -v
