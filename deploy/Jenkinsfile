@@ -1,5 +1,5 @@
 pipeline {
-  //agent { label 'master' } 
+  agent any /// { label 'master' } 
  
   parameters {
     booleanParam(name : 'BUILD_DOCKER_IMAGE', defaultValue : true, description : 'BUILD_DOCKER_IMAGE')
@@ -30,7 +30,7 @@ pipeline {
     stage('============ Build Docker Image ============') {
         when { 
             expression { return params.BUILD_DOCKER_IMAGE } 
-            }
+        }
       //  agent {label 'build' }
         steps {
             echo "Build docker image "
@@ -48,6 +48,7 @@ pipeline {
         when { expression { return params.RUN_TEST } }
        // agent //{ label 'build' }
         steps {
+            echo "Stage Test"
             // sh'''
             //     aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${ECR_REPOSITORY}
             //     docker run --rm ${ECR_DOCKER_IMAGE}:${ECR_DOCKER_TAG} /root/.local/bin/pytest -v
